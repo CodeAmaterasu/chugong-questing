@@ -10,7 +10,7 @@ export class AppController {
   getHello(): string {
     const user = new User();
     user.email = 'danilo.murer@edu.tbz.ch';
-    user.name = 'Danilo jt';
+    user.name = 'Danilo Murer';
     this.appService.saveUser(user).then((data) => {
       console.log(data);
     });
