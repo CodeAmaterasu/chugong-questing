@@ -31,6 +31,7 @@
 ```bash
 $ npm install
 ```
+Remember to create a .env file inside the directory based on the .env.template.
 
 ## Running the app
 
