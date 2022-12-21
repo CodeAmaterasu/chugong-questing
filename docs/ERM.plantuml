@@ -1,0 +1,72 @@
+@startuml ERM
+
+database User_Database {
+  entity Application_Users {
+    * **ID : number <<generated>>**
+    --
+    * Username : text
+    * Password : text
+    * Email : text
+    * **Chugong_User_ID : number**
+  }
+}
+
+database Chugong_Database {
+  entity Users {
+    * **ID : number <<generated>>**
+    --
+    * UserLvl : number
+    * StrengthLvl : number
+    * IntelligenceLvl : number
+    * EnduranceLvl : number
+    * CharismaLvl : number
+    * VitalityLvl : number
+    * DexterityLvl : number
+  }
+
+  entity Accepted_Quests {
+    * **ID : number <<generated>>**
+    --
+    * **Market_Quest_ID : number <<FK>>**
+    * **User_ID : number <<FK>>**
+    * Status : Enum
+  }
+
+  entity Accepted_Questlines {
+    * **ID : number <<generated>>**
+    --
+    * **Market_Questline_ID : number <<FK>>**
+    * **User_ID : number <<FK>>**
+    * Status : Enum
+  }
+
+  entity Quests {
+    * **ID : number <<generated>>**
+    --
+    * Name : text
+    * Description : text
+    * Image : text
+    * Reward : Array<text,int>
+    * Published : bool
+  }
+
+  entity Questlines {
+    * **ID : number <<generated>>**
+    --
+    * Name : text
+    * Description : text
+    * Image : text
+    * Quests : Array<int>
+    * Reward : Array<text,int>
+    * Published : bool
+  }
+}
+
+Application_Users ||.up.|| Users
+Accepted_Questlines }o..|| Users
+Accepted_Questlines }o..|| Questlines
+
+Accepted_Quests }o..|| Users
+Accepted_Quests }o..|| Quests
+
+@enduml
