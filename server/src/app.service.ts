@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { DataSource } from 'typeorm';
+import {DataSource, DeleteResult} from 'typeorm';
 import { User } from './data/User';
 @Injectable()
 export class AppService {
@@ -16,4 +16,12 @@ export class AppService {
       name: name,
     });
   }
+
+  deleteUser(user: User): Promise<DeleteResult> {
+    return this.dataSource.getMongoRepository(User).delete(user);
+  }
+
+  // updateUser(user: User): Promise<User> {
+  //   return this.dataSource.getMongoRepository(User).update();
+  // }
 }
