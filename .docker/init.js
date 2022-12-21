@@ -5,4 +5,16 @@ dbAdmin.createUser({
     roles: [{role: 'readWrite', db: 'chugong'}],
 });
 
-db.getSiblingDB('chugong').createCollection('user');
+db = new Mongo().getDB('security');
+
+dbAdmin.createUser({
+    user: 'security-user',
+    pwd: 'security-password',
+    roles: [{role: 'readWrite', db: 'security'}],
+});
+
+db.getSiblingDB('security').createCollection('application.user')
+
+db.getSiblingDB('chugong').createCollection('users');
+db.getSiblingDB('chugong').createCollection('quests');
+db.getSiblingDB('chugong').createCollection('questlines');

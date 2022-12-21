@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './data/User';
 import { ConfigModule } from '@nestjs/config';
+import {Quest} from "./data/Quest";
+import {Questline} from "./data/Questline";
 
 @Module({
   imports: [
@@ -15,7 +17,7 @@ import { ConfigModule } from '@nestjs/config';
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
-      entities: [User],
+      entities: [User, Quest, Questline],
       synchronize: true,
       authSource: 'admin',
     }),

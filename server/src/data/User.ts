@@ -1,10 +1,20 @@
 import { Entity, ObjectID, ObjectIdColumn, Column } from 'typeorm';
-@Entity('user')
+@Entity('users')
 export class User {
   @ObjectIdColumn()
   id: ObjectID;
   @Column()
-  name: string;
+  userLvl: number;
   @Column()
-  email: string;
+  strengthLvl: number;
+  @Column()
+  intelligenceLvl: number;
+  @Column()
+  enduranceLvl: number;
+  @Column()
+  charismaLvl: number;
+  @Column()
+  vitalityLvl: number;
+  @Column()
+  dexterity: number;
 }
