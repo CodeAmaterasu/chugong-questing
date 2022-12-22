@@ -5,6 +5,9 @@ import { User } from '../../user/schemas/user.schema';
 
 export type AcceptedQuestDocument = HydratedDocument<AcceptedQuest>;
 
+/**
+ * MongoDB Entity Schema class
+ */
 @Schema()
 export class AcceptedQuest {
   @Prop({ type: Types.ObjectId, ref: 'Quest' })

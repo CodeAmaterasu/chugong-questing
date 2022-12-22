@@ -3,6 +3,9 @@ import { HydratedDocument, Types, SchemaTypes } from 'mongoose';
 
 export type UserDocument = HydratedDocument<User>;
 
+/**
+ * MongoDB Entity Schema class
+ */
 @Schema()
 export class User {
   @Prop()

@@ -4,6 +4,9 @@ import { Quest } from '../../quest/schemas/quest.schema';
 
 export type QuestlineDocument = HydratedDocument<Questline>;
 
+/**
+ * MongoDB Entity Schema class
+ */
 @Schema()
 export class Questline {
   @Prop()

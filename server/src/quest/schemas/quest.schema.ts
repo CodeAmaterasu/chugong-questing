@@ -3,6 +3,9 @@ import { HydratedDocument, Types, SchemaTypes } from 'mongoose';
 
 export type QuestDocument = HydratedDocument<Quest>;
 
+/**
+ * MongoDB Entity Schema class
+ */
 @Schema()
 export class Quest {
   @Prop()

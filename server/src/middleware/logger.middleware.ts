@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from 'express';
 import { Logger } from '../logger/logger.service';
 
 /**
- * Middleware to log incoming requests
+ * Middleware to log incoming requests using the {@link Logger}
  */
 @Injectable()
 export class LoggerMiddleware implements NestMiddleware {

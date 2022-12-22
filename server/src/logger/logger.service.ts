@@ -2,6 +2,10 @@ import { Injectable, LoggerService, LogLevel, Scope } from '@nestjs/common';
 import * as winston from 'winston';
 import * as process from 'process';
 
+/**
+ * Service class for the winston logger.
+ * Implements LoggingService interface for nestjs logging integration.
+ */
 @Injectable({ scope: Scope.TRANSIENT })
 export class Logger implements LoggerService {
   private logger = winston.createLogger({
@@ -19,6 +23,10 @@ export class Logger implements LoggerService {
     ),
     transports: this.getTransports(),
   });
+
+  /**
+   * Method to get winston transports based on env variables
+   */
   getTransports(): any {
     if (process.env.NODE_ENV === 'prod') {
       return [
@@ -45,6 +53,7 @@ export class Logger implements LoggerService {
       ];
     }
   }
+  
   log(message: any) {
     this.logger.info(message);
   }
