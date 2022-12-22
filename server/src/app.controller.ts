@@ -1,11 +1,22 @@
-import { Controller, Get, Logger } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  UseFilters,
+} from '@nestjs/common';
 import { AppService } from './app.service';
 import { User } from './data/User';
+import { Logger } from './logger/logger.service';
+import { HttpExceptionFilter } from './filter/http-exception.filter';
 
 @Controller()
+@UseFilters(HttpExceptionFilter)
 export class AppController {
-  private readonly logger = new Logger(AppController.name);
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    private readonly appService: AppService,
+    private logger: Logger,
+  ) {}
 
   @Get()
   getHello(): string {
@@ -13,7 +24,6 @@ export class AppController {
     const user = new User();
     user.email = 'danilo.murer@edu.tbz.ch';
     user.name = 'Danilo Murer';
-    console.log(process.env);
     this.appService.saveUser(user).then((data) => {
       this.logger.log(`${JSON.stringify(data)}`);
     });
@@ -24,6 +34,11 @@ export class AppController {
     //     console.log(data);
     //   });
     // });
+    //throw new HttpException(
+    //  { status: HttpStatus.INTERNAL_SERVER_ERROR, error: 'error' },
+    //  HttpStatus.INTERNAL_SERVER_ERROR,
+    //  { cause: new Error('test') },
+    //);
     return this.appService.getHello();
   }
 }

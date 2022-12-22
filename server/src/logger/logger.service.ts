@@ -12,7 +12,6 @@ export class Logger implements LoggerService {
         return info;
       })(),
       winston.format.timestamp({ format: 'dd.MM.YYYY HH:mm:SS.sss' }),
-      winston.format.colorize(),
       winston.format.printf(
         ({ level, message, timestamp }) =>
           `${timestamp} [${level}]: ${message}`,

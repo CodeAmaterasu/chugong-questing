@@ -1,10 +1,11 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { DataSource, DeleteResult } from 'typeorm';
 import { User } from './data/User';
+import { Logger } from './logger/logger.service';
+
 @Injectable()
 export class AppService {
-  private readonly logger = new Logger(AppService.name);
-  constructor(private dataSource: DataSource) {}
+  constructor(private dataSource: DataSource, private logger: Logger) {}
   getHello(): string {
     return 'Hello World!';
   }
