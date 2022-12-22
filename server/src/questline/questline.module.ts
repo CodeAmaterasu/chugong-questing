@@ -19,5 +19,6 @@ import { QuestModule } from '../quest/quest.module';
   ],
   controllers: [QuestlineController],
   providers: [QuestlineService],
+  exports: [QuestlineService],
 })
 export class QuestlineModule {}

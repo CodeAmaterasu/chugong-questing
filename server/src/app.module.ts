@@ -6,6 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
 import { QuestModule } from './quest/quest.module';
 import { QuestlineModule } from './questline/questline.module';
+import { AcceptedQuestlineModule } from './accepted-questline/accepted-questline.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { QuestlineModule } from './questline/questline.module';
     UserModule,
     QuestModule,
     QuestlineModule,
+    AcceptedQuestlineModule,
   ],
   controllers: [AppController],
   providers: [AppService],
