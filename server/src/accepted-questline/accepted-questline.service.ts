@@ -19,7 +19,7 @@ export class AcceptedQuestlineService {
   }
 
   async findById(id: string): Promise<AcceptedQuestline> {
-    const foundAccepteduestline = this.acceptedQuestlineModel.findById(id);
-    return foundAccepteduestline.exec();
+    const foundAcceptedQuestline = this.acceptedQuestlineModel.findById(id);
+    return foundAcceptedQuestline.exec();
   }
 }

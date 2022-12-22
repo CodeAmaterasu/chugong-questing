@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { QuestModule } from './quest/quest.module';
 import { QuestlineModule } from './questline/questline.module';
 import { AcceptedQuestlineModule } from './accepted-questline/accepted-questline.module';
+import { AcceptedQuestModule } from './accepted-quest/accepted-quest.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { AcceptedQuestlineModule } from './accepted-questline/accepted-questline
     QuestModule,
     QuestlineModule,
     AcceptedQuestlineModule,
+    AcceptedQuestModule,
   ],
   controllers: [AppController],
   providers: [AppService],

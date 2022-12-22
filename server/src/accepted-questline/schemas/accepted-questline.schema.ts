@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument, Types, SchemaTypes } from 'mongoose';
+import { HydratedDocument, Types } from 'mongoose';
 import { Questline } from '../../questline/schemas/questline.schema';
 import { User } from '../../user/schemas/user.schema';
 
