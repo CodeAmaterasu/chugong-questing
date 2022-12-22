@@ -2,19 +2,19 @@
 
 database User_Database {
   entity Application_Users {
-    * **ID : number <<generated>>**
+    * **ID : ObjectId <<generated>>**
     --
     * Username : text
     * Password : text
     * Email : text
-    * **Chugong_User_ID : number**
   }
 }
 
 database Chugong_Database {
   entity Users {
-    * **ID : number <<generated>>**
+    * **ID : ObjectId <<generated>>**
     --
+    * **Application_User_ID : ObjectId**
     * UserLvl : number
     * StrengthLvl : number
     * IntelligenceLvl : number
@@ -25,33 +25,34 @@ database Chugong_Database {
   }
 
   entity Accepted_Quests {
-    * **ID : number <<generated>>**
+    * **ID : ObjectId <<generated>>**
     --
-    * **Market_Quest_ID : number <<FK>>**
-    * **User_ID : number <<FK>>**
+    * **Market_Quest_ID : ObjectId <<FK>>**
+    * **User_ID : ObjectId <<FK>>**
     * Status : Enum
   }
 
   entity Accepted_Questlines {
-    * **ID : number <<generated>>**
+    * **ID : ObjectId <<generated>>**
     --
-    * **Market_Questline_ID : number <<FK>>**
-    * **User_ID : number <<FK>>**
+    * **Market_Questline_ID : ObjectId <<FK>>**
+    * **User_ID : ObjectId <<FK>>**
     * Status : Enum
   }
 
   entity Quests {
-    * **ID : number <<generated>>**
+    * **ID : ObjectId <<generated>>**
     --
     * Name : text
     * Description : text
     * Image : text
     * Reward : Array<text,int>
     * Published : bool
+    * Author: ObjectId
   }
 
   entity Questlines {
-    * **ID : number <<generated>>**
+    * **ID : ObjectId <<generated>>**
     --
     * Name : text
     * Description : text
@@ -59,6 +60,7 @@ database Chugong_Database {
     * Quests : Array<int>
     * Reward : Array<text,int>
     * Published : bool
+    * Author: ObjectId
   }
 }
 
