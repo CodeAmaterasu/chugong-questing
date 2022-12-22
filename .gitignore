@@ -34,4 +34,5 @@ coverage
 *.launch
 .settings/
 *.sublime-workspace
+.fleet
 .env
