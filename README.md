@@ -1,24 +1,41 @@
-# Full-Stack Web Application
+# Chugong
 
-## Technologies
+## Description
 
-Backend is developed using NestJs (/server) and the frontend using Vue.js (/client).
+Chugong makes life a game utilizing statistics and quests, just like in an adventure game. In this game, you are the main character. You can accept quests and questlines that give you experience points and thus your level and stats.
 
-DevOps will be implemented using Docker, Jenkins and Kubernetes.
+### Stats
 
-## Run MongoDB
+Stats are used to measure your abilities. Currently, we support these categories:
+* Strength
+* Intelligence
+* Endurance
+* Charisma
+* Vitality
+* Dexterity
 
-Simply run the 'MongoDB' WebStorm Run Configuration.
+These stats are measured in levels and can be leveled through quests and questlines. There is no upper limit to the level!
 
-If not possible, the database can be run with following command:
-```bash
-cd .docker/
-docker-compose up -d
-```
+### Quests
 
-notes for documentation
+A quest describes a task for the player. Each quest rewards the player in experience points for his stats. A quest can only give out experience points in three different categories. Quests can be replayed multiple times.
 
-- first install yarn `npm install --global yarn`
-- then workspaces
-- then how to start everything
-- then how to start the modules singularly
+### Questlines
+
+Is a collection of quests. On completing a questline, the player is rewarded with bonus experience points. Questlines can be replayed multiple times.
+
+### Marketplace
+
+There is a player lead marketplace for users to upload and download their favorite quests!
+
+## Gallery
+
+Images soon
+
+## Getting Started
+
+Description soon.
+
+## Documentation
+
+For the technical documentation. Please see the [Wiki](https://github.com/CodeAmaterasu/chugong-questing/wiki).
