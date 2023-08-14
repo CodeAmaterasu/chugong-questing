@@ -1,0 +1,15 @@
+{
+  "name": "chugong-questing",
+  "version": "1.0.0",
+  "repository": "https://github.com/CodeAmaterasu/chugong-questing.git",
+  "author": "Danilo Jakob <danilo.jakob@gmx.ch>, Stefan Ninkovic",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["security/", "server/", "client/"],
+  "scripts": {
+    "start": "yarn start:client && yarn start:server && yarn start:security",
+    "start:client": "yarn workspace client dev",
+    "start:server": "yarn workspace server start",
+    "start:security": "yarn workspace security start"
+  }
+}

@@ -15,3 +15,10 @@ If not possible, the database can be run with following command:
 cd .docker/
 docker-compose up -d
 ```
+
+notes for documentation
+
+- first install yarn `npm install --global yarn`
+- then workspaces
+- then how to start everything
+- then how to start the modules singularly
